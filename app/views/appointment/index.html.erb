@@ -1,1 +1,27 @@
-<h1>Appoinments </h1>
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <div>
+      <h2>My Appoiments</h2>
+    </div>
+    <div>
+      <% if current_user.patient? %>
+        <%= button_to "My Directory", "#", :method => :get, :class => "btn btn-primary btn-lg" %>
+      <% end %>
+    </div>
+  </div>
+  <hr />
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <% @appointments.each do |appointment| %>
+        <div class="card mt-4">
+          <% if current_user.patient? %>
+            <%= render "appointment/appointment_pat", :appointment => appointment %>
+          <% else %>
+            <%= render "appointment/appointment_doc", :appointment => appointment %>
+          <% end %>
+        </div>
+        <br/>
+      <% end %> 
+    </div>
+  </div>
+</div>

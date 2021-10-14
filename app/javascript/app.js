@@ -6,7 +6,6 @@ import "channels"
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap'
 import 'stylesheets/application'
-import * as Templates from 'templates'
 import { RalixApp }  from 'ralix'
 
 // Controllers
@@ -16,8 +15,7 @@ const App = new RalixApp({
   rails_ujs: Rails,
   routes: {
     '/.*':        AppCtrl
-  },
-  templates: Templates
+  }
 })
 
 Rails.start()

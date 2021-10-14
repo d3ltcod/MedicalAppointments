@@ -1,0 +1,9 @@
+
+<nav class="navbar navbar-light">
+  <a class="navbar-brand text-white" href="#">
+      Medical Appoiments
+  </a>
+  <% if user_signed_in? %>
+    <%= button_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn-danger", :id => "sign-out" %>
+  <% end %>
+</nav>
