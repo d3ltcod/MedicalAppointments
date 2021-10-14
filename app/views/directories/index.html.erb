@@ -8,6 +8,13 @@
     </div>
   </div>
   <hr />
+
+  <div class="search">
+    <%= form_tag(directory_path, method: :get) do %>
+      <%= text_field_tag :search, params[:search], class:"form-control form-control-lg", placeholder: "Search by name or city" %>
+    <% end %> 
+  </div> 
+
   <section class="py-1">
     <div class="container">
       <div class="row">

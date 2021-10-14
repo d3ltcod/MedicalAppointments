@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   resources :appointments, only: [:index, :show]
 
-  get '/directory', to: 'patients#index'
+  get '/directory', to: 'directories#index'
 end
