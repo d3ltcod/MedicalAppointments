@@ -1,9 +1,14 @@
 class AppointmentController < ApplicationController
-  before_action :authenticate_user!, :set_appointemnts, only: [:index]
-
+  before_action :authenticate_user!, :set_appointemnts, only: [:index, :show]
+  
   # GET /appointments
   def index
     @appointments
+  end
+
+  # GET /appointments/:id
+  def show
+    @appointment = @appointments.find(params[:id])
   end
 
   private

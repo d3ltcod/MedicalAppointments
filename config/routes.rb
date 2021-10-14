@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     registrations: 'registrations'
   }
 
+  resources :appointment, only: [:index, :show]
 end
