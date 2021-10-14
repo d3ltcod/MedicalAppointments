@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <div>
+      <h2>My Directory</h2>
+    </div>
+    <div>
+      <a href="#" onclick="back()" class="btn btn-primary btn-lg">Back</a>
+    </div>
+  </div>
+  <hr />
+  <section class="py-1">
+    <div class="container">
+      <div class="row">
+      <% @doctors.each do |doctor| %>
+        <div class="col-md-6 col-lg-4">
+          <div class="card my-3 text-center">
+            <div class="card-body">
+              <h3 class="card-title"><%= doctor.full_name %></h3>
+              <p class="card-text"><%= doctor.city %> - <%= doctor.email %></p>
+              <a href="#" class="btn btn-primary">Create appoinment</a>
+            </div>
+          </div>
+        </div>
+      <% end %> 
+      </div>
+    </div>
+  </section>
+</div>
