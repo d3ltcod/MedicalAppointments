@@ -3,14 +3,16 @@ before_action :authenticate_user!, :check_if_patient, only: [:index]
   
   # GET /directory
   def index
-    if params[:search]
-      search_term = params[:search].downcase.gsub(/\s+/, "")
-      @doctors = Doctor.all.select { |d|
-              d.full_name.downcase.include?(search_term) || 
-              d.city.downcase.include?(search_term) }
-    else
-      @doctors = Doctor.all
-    end
+    # if params[:search]
+    #   search_term = params[:search].downcase.gsub(/\s+/, "")
+    #   @doctors = Doctor.all.select { |d|
+    #           d.full_name.downcase.include?(search_term) || 
+    #           d.city.downcase.include?(search_term) }
+    # else
+    #   @doctors = Doctor.all
+    # end
+
+    @doctors = Doctor.all
   end
 
   private

@@ -10,16 +10,14 @@
   <hr />
 
   <div class="search">
-    <%= form_tag(directory_path, method: :get) do %>
-      <%= text_field_tag :search, params[:search], class:"form-control form-control-lg", placeholder: "Search by name or city" %>
-    <% end %> 
+    <%= text_field_tag :search, params[:search], id:"search-directory", class:"form-control form-control-lg", placeholder: "Search by name or city" %>
   </div> 
 
   <section class="py-1">
     <div class="container">
       <div class="row">
       <% @doctors.each do |doctor| %>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 directory-doc-card">
           <div class="card my-3 text-center">
             <div class="card-body">
               <h3 class="card-title"><%= doctor.full_name %></h3>
