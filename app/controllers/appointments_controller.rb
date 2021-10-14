@@ -1,4 +1,4 @@
-class AppointmentController < ApplicationController
+class AppointmentsController < ApplicationController
   before_action :authenticate_user!, :set_appointemnts, only: [:index, :show]
   
   # GET /appointments

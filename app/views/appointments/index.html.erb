@@ -15,9 +15,9 @@
       <% @appointments.each do |appointment| %>
         <div class="card mt-4">
           <% if current_user.patient? %>
-            <%= render "appointment/appointment_pat", :appointment => appointment %>
+            <%= render "appointments/appointment_pat", :appointment => appointment %>
           <% else %>
-            <%= render "appointment/appointment_doc", :appointment => appointment %>
+            <%= render "appointments/appointment_doc", :appointment => appointment %>
           <% end %>
         </div>
       <% end %> 

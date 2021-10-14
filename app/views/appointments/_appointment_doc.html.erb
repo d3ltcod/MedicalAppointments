@@ -3,5 +3,5 @@
   <h5 class="card-title"><b>Name of Doctor:</b> <%= appointment.doctor.full_name %></h5>
   <p class="card-text"><small class="text-muted"><b>City of Doctor:</b> <%= appointment.doctor.city %></small></p>
   <p class="card-text"><b>Observations:</b> <%= appointment.observations %></p>
-  <a onclick="visit('/appointment/<%= appointment.id %>')" href="#" class="btn btn-primary">More information</a>
+  <a onclick="visit('/appointments/<%= appointment.id %>')" href="#" class="btn btn-primary">More information</a>
 </div>

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root to: "appointment#index"
+  root to: "appointments#index"
 
   devise_for :users, controllers: {
     registrations: 'registrations'
   }
 
-  resources :appointment, only: [:index, :show]
+  resources :appointments, only: [:index, :show]
 end
