@@ -9,18 +9,18 @@ class User < ApplicationRecord
   validates_presence_of :role
 
   enum role: {
-    patient: "0",
-    doctor: "1",
+    patient: '0',
+    doctor: '1'
   }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
   def patient
-    return self.role == "patient"
+    self.role == 'patient'
   end
 
   def doctor
-    return self.role == "doctor"
+    self.role == 'doctor'
   end
 end

@@ -63,7 +63,7 @@ RSpec.describe "Appointments", type: :request do
         patient.appointments << appointment
         patient.save
 
-        get appointment_url('1')
+        get appointments_url('1')
         expect(response).to have_http_status(200)
       end
     end

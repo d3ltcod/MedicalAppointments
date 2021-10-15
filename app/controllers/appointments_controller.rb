@@ -22,34 +22,34 @@ class AppointmentsController < ApplicationController
 
   # POST/appointments/:params
   def create
-    @appointment = Patient.find(current_user.id).appointments.build(appointment_params) 
-    
+    @appointment = Patient.find(current_user.id).appointments.build(appointment_params)
+
     if @appointment.valid?
       @appointment.save
-      flash[:success] = "Appointment has been created successfully!"
+      flash[:success] = 'Appointment has been created successfully!'
       redirect_to root_path
     else
-      render json: @appointment.errors
+      flash[:errors] = @appointment.errors
     end
 
   end
 
   private
-    def set_appointemnts
-      if current_user.doctor?
-        @appointments = Doctor.find(current_user.id).appointments
-      else
-        @appointments = Patient.find(current_user.id).appointments
-      end
+  def set_appointemnts
+    if current_user.doctor?
+      @appointments = Doctor.find(current_user.id).appointments
+    else
+      @appointments = Patient.find(current_user.id).appointments
     end
+  end
 
-    def appointment_params
-      params.require(:appointment).permit(:doctor_id, :observations, :appointment_date, images: [])
-    end
+  def appointment_params
+    params.require(:appointment).permit(:doctor_id, :observations, :appointment_date, images: [])
+  end
 
-    def check_if_patient
-      if current_user.doctor?
-        self.permission_denied
-      end
+  def check_if_patient
+    if current_user.doctor?
+      permission_denied
     end
+  end
 end
