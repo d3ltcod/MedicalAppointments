@@ -1,5 +1,3 @@
-import { hide } from '@popperjs/core';
-import { visit } from 'turbolinks';
 import AppCtrl from './app'
 
 export default class DirectoriesCtrl extends AppCtrl {

@@ -11,11 +11,13 @@ import { RalixApp }  from 'ralix'
 // Controllers
 import AppCtrl       from 'controllers/app'
 import DirectoriesCtrl     from 'controllers/directories'
+import AppointmentsCtrl     from 'controllers/appointments'
 
 const App = new RalixApp({
   rails_ujs: Rails,
   routes: {
     '/directory':     DirectoriesCtrl,
+    '/appointments':     AppointmentsCtrl,
     '/.*':        AppCtrl
   }
 })

@@ -22,7 +22,7 @@
             <div class="card-body">
               <h3 class="card-title"><%= doctor.full_name %></h3>
               <p class="card-text"><%= doctor.city %> - <%= doctor.email %></p>
-              <a href="#" class="btn btn-primary">Create appoinment</a>
+              <a href="#" onclick="visit('/appointments/new/<%= doctor.id %>')" class="btn btn-primary">Create appoinment</a>
             </div>
           </div>
         </div>

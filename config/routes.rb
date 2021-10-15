@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     registrations: 'registrations'
   }
 
-  resources :appointments, only: [:index, :show]
+  resources :appointments, only: [:index, :show, :create]
+  get '/appointments/new/:id', to: 'appointments#new'
 
   get '/directory', to: 'directories#index'
 end

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <div>
+      <h2>New Appointment</h2>
+    </div>
+    <div>
+      <a href="#" onclick="back()" class="btn btn-primary btn-lg">Back</a>
+    </div>
+  </div>
+  <hr />
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title"><b>Name of Doctor:</b> <%= @appointment.doctor.full_name %></h5>
+          <p class="card-text"><small class="text-muted"><b>City of Doctor:</b> <%= @appointment.doctor.city %></small></p>
+           <%=form_with model: @appointment do |f|  %>
+            <%= f.hidden_field :doctor_id, value: @appointment.doctor.id %>
+            <div class="field form-outline mb-3">
+                <%= f.label :appointment_date %>
+                <%= f.datetime_local_field :appointment_date, class: 'form-control' %>
+            </div>
+            <div class="field form-outline mb-3">
+              <%= f.label :observations %>
+              <%= f.text_area :observations, class: 'form-control' %>
+            </div>
+            <div class="field form-outline mb-3">
+              <%= f.label "Please, select 3 images." %>
+              <%= f.file_field :images, :multiple => true, id: "input-images-new-appointment", onchange: "checkNumberFiles()", accept: "image/*"%>
+            </div>
+            <button class="btn btn-primary btn-lg", id="submit-new-appointment", disabled>Create</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
