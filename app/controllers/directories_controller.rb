@@ -12,7 +12,7 @@ before_action :authenticate_user!, :check_if_patient, only: [:index]
     #   @doctors = Doctor.all
     # end
 
-    @doctors = Doctor.all
+    @doctors = Doctor.all.where(role: 'doctor')
   end
 
   private
