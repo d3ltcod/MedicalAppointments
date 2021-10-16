@@ -5,7 +5,7 @@ Tech test to show my skills as full stack Rails developer
 
 ```bash
 https://github.com/d3ltcod/MedicalAppointments
-cd LaravelTube/
+cd MedicalAppointments/
 bundle install
 yarn install
 # Now, we are going to generate the DB and fill with some seeds for the example
