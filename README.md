@@ -8,7 +8,7 @@ https://github.com/d3ltcod/MedicalAppointments
 cd MedicalAppointments/
 bundle install
 yarn install
-# Now, we are going to generate the DB and fill with some seeds for the example
+# Now, we are going to generate the DB. See notes if you would like to add some data as example
 rake db:migrate
 rails s
 ```
