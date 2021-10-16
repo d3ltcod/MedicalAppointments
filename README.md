@@ -21,7 +21,7 @@ rake db:seed
 
 ## Ruby and Rails version tested
 * [ruby 3.0.2](https://www.ruby-lang.org/en/news/2021/07/07/ruby-3-0-2-released/)
-* [rails 6.1](hhttps://guides.rubyonrails.org/6_1_release_notes.html)
+* [rails 6.1](https://guides.rubyonrails.org/6_1_release_notes.html)
 
 This packages use:
 * [Ralix](https://github.com/ralixjs/ralix)
