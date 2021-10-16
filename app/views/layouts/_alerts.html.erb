@@ -1,2 +1,4 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<p class=" notification alert-primary"><%= notice %></p>
+<% unless alert.nil? %>
+  <p class="alert notification alert-primary"><%= alert %></p>
+<% end %>
